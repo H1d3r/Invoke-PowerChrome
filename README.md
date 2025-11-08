@@ -53,7 +53,6 @@ Invoke-PowerChrome -Browser Edge
 Invoke-PowerChrome -Browser Chrome -HideBanner
 
 # Verbose
-# Hide Banner
 Invoke-PowerChrome -Browser Chrome -Verbose
 ```
 
