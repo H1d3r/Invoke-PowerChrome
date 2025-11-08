@@ -38,7 +38,13 @@ ___
 
 
 ## Usage
+
+Load into memory
+```powershell
+IRM 'https://raw.githubusercontent.com/The-Viper-One/Invoke-PowerChrome/refs/heads/main/Invoke-PowerChrome.ps1' | IEX
 ```
+> Example Commands
+```powershell
 Invoke-PowerChrome -Browser Chrome
 Invoke-PowerChrome -Browser Chromium
 Invoke-PowerChrome -Browser Edge
