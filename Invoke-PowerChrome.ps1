@@ -627,7 +627,7 @@ function Get-ChromiumLoginBlobs {
     }
 
     if (-not (Test-Path -Path $LoginDataPath)) {
-        return "[-] No 'Login Data' file found for $($Browser.ToUpper()) at $LoginDataPath"
+        return $false
     }
 
     [int]$SqliteOk              = 0
@@ -771,7 +771,7 @@ if (-not ($Browser)){
     # ------------------------------------------------------------------
     
     
-    Write-Output "`n[*] $(if ($Browser -eq "Chrome"){"Google Chrome"} elseif ($Browser -eq "edge"){"Microsoft Edge"} else {$Browser})"
+    Write-Output "`n[*] $(if ($Browser -eq "Chrome"){"Google Chrome"} elseif ($Browser -eq "edge"){"Microsoft Edge"} elseif ($Browser -eq "chromium"){"Chromium"} else {$Browser})"
     Log "Current User Context : $([System.Security.Principal.WindowsIdentity]::GetCurrent().Name)"
     Log "Current User SID     : $([System.Security.Principal.WindowsIdentity]::GetCurrent().User.Value)"
 
@@ -794,7 +794,6 @@ if (-not ($Browser)){
     if ($Verbose) {
         $BrowserData | Format-Table URL, Username, BlobHeader
     }
-
     # ------------------------------------------------------------------
     # LOCAL STATE RESOLUTION
     # ------------------------------------------------------------------
